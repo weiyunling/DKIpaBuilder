@@ -1,5 +1,5 @@
 # DKIpaBuilder
-iOS项目一键打包 ipa 并上传到内测分发平台 fir.im
+iOS项目 hook + shell 自动打包 ipa 并上传到内测分发平台 fir.im
 
 #### 前言
 
@@ -31,7 +31,7 @@ iOS项目一键打包 ipa 并上传到内测分发平台 fir.im
  
 因为 mini 是机械硬盘，读写速度慢，打包可能要好几分钟，大一点的项目可能要十几分钟，如果 CocoaPods 安装了很大的第三方库或者 OC 与 Swift 混编的时候，甚至只是 storyboard 和 xib 文件非常多的时候，可能会打包几十分钟。这很坑爹啊，明明我自己的电脑是 macBook Pro，有着256G的固态硬盘，为什么我要绕到 mini 去打包？
  
-另外，明明我的 Xcode 已经什么都配好了，我想省掉的只是每次 Archive 都要经过的哪几个步骤，为什么我要重新配 mini 上的环境，还要配 Jenkins 里的 provisioning Profile，还要配什么钥匙串，讲道理，不绕吗？
+另外，明明我的 Xcode 已经什么都配好了，我想省掉的只是每次 Archive 都要经过的那几个步骤，为什么我要重新配 mini 上的环境，还要配 Jenkins 里的 provisioning Profile，还要配什么钥匙串，讲道理，不绕吗？
 
 出于以上的以及其它的种种问题，最终我不采用 Jenkins 来持续集成，至少针对 iOS 我是拒绝的，这个时候需要想些别的办法。
 
@@ -247,7 +247,7 @@ Bingos-MacBook-Pro:SF bingo$
 
 #### 补充
 
-用命令行上传 ipa 到 fir.im 是没有更新日志的，需要手动到平台网页去编辑更新日志。但这也不是事，把 git commit 的 message 拷贝粘贴过去就是了，也就鼠标点几下子的事。（这也嫌麻烦？无解了，Jenkins 也不帮不了你）
+用命令行上传 ipa 到 fir.im 是没有更新日志的，需要手动到平台网页去编辑更新日志。但这也不是事儿，把 git commit 的 message 拷贝粘贴过去就是了，也就鼠标点几下子的事。（这也嫌麻烦？无解了，Jenkins 也不帮不了你）
 
 #### 后话
 
